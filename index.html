@@ -791,8 +791,10 @@ if(hasGSAP&&!reduce){
   // Animacja wyłaniania spod maski (yPercent 110 -> 0)
   var inners=h1.querySelectorAll('.tr-inner');
   if(window.gsap){
-    gsap.fromTo(inners,{yPercent:110},
-      {yPercent:0,duration:.9,ease:'power4.out',stagger:.06,delay:.15});
+    // y:0 kasuje px-owy offset, który GSAP wylicza z CSS-owego translateY(110%);
+    // bez tego sam yPercent nie sprowadza słowa z powrotem do widoku.
+    gsap.set(inners,{y:0,yPercent:110});
+    gsap.to(inners,{yPercent:0,duration:.9,ease:'power4.out',stagger:.06,delay:.15});
   }else{ // wariant bez GSAP — czysty CSS transition
     inners.forEach(function(el,i){
       el.style.transition='transform .9s cubic-bezier(.22,1,.36,1)';
