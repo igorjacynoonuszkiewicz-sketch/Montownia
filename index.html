@@ -21,6 +21,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
   body{
     background:var(--bg); color:var(--text);
     font-family:'Manrope',system-ui,sans-serif; line-height:1.6;
@@ -517,6 +518,10 @@
         <div class="big grad-text">4,2</div>
         <div class="stars">★★★★☆</div>
         <div class="src">na podstawie 700+ opinii w Google</div>
+        <a href="https://maps.app.goo.gl/3JgaZiXVNqc5XGma8" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:16px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.6 5.6L21 9.3l-4.5 4.2 1.1 6.1L12 16.8 6.4 19.6l1.1-6.1L3 9.3l6.4-.7Z" stroke-linejoin="round"/></svg>
+          Zobacz wszystkie opinie w Google
+        </a>
       </div>
     </div>
     <div class="rev-grid">
@@ -593,7 +598,7 @@
       <div style="display:flex;flex-direction:column;gap:20px">
         <div class="card info-card">
           <h4>📍 Dane kontaktowe</h4>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="t">Lisia Grobla 7, 80-860 Gdańsk<small>Kompleks Montownia Food Hall</small></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="t"><a href="https://maps.app.goo.gl/3JgaZiXVNqc5XGma8" target="_blank" rel="noopener" style="color:var(--gold-soft);font-weight:700">Lisia Grobla 7, 80-860 Gdańsk</a><small>Kompleks Montownia Food Hall · kliknij, aby nawigować</small></div></div>
           <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 9 6 15 15 15a2 2 0 0 0 2-1.7l.3-2a1.5 1.5 0 0 0-1-1.6l-3-1a1.5 1.5 0 0 0-1.7.5l-.8 1a12 12 0 0 1-4.7-4.7l1-.8a1.5 1.5 0 0 0 .5-1.7l-1-3A1.5 1.5 0 0 0 7.7 3.7l-2 .3A2 2 0 0 0 4 5Z"/></svg><div class="t"><a href="tel:+48782041777" style="color:var(--gold-soft);font-weight:700">+48 782 041 777</a><small>Zamówienia i rezerwacje</small></div></div>
           <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V4H8v2M3 11h18"/></svg><div class="t">Karty · płatności mobilne · gotówka<small>Akceptujemy wszystkie formy płatności</small></div></div>
           <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="9" rx="1.5"/><path d="M6 11V8a3 3 0 0 1 6 0M12 8a3 3 0 0 1 6 0v3"/></svg><div class="t">Parking w pobliżu Montowni<small>Dostęp dla osób z niepełnosprawnościami</small></div></div>
@@ -605,9 +610,15 @@
           <div class="hours-row"><span>Niedziela</span><span>11:00 – 22:00</span></div>
         </div>
       </div>
-      <div class="map-frame">
-        <iframe title="Mapa — DimSum & Ramen Montownia, Lisia Grobla 7 Gdańsk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Lisia%20Grobla%207,%2080-860%20Gda%C5%84sk&output=embed"></iframe>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="map-frame" style="flex:1">
+          <iframe title="Mapa — DimSum & Ramen Montownia, Lisia Grobla 7 Gdańsk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Lisia%20Grobla%207,%2080-860%20Gda%C5%84sk&output=embed"></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/3JgaZiXVNqc5XGma8" target="_blank" rel="noopener" class="btn btn-primary" style="justify-content:center">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          Nawiguj w Google Maps
+        </a>
       </div>
     </div>
   </div>
@@ -642,7 +653,7 @@
       <div>
         <h5>Kontakt</h5>
         <ul>
-          <li><a href="https://www.google.com/maps?q=Lisia+Grobla+7,+80-860+Gda%C5%84sk" target="_blank" rel="noopener">Lisia Grobla 7, Gdańsk</a></li>
+          <li><a href="https://maps.app.goo.gl/3JgaZiXVNqc5XGma8" target="_blank" rel="noopener">Lisia Grobla 7, Gdańsk</a></li>
           <li><a href="tel:+48782041777">+48 782 041 777</a></li>
           <li>Pn–Czw 11–22</li>
           <li>Pt–Sob 11–00</li>
@@ -662,6 +673,10 @@
   <a href="tel:+48782041777" class="btn btn-ghost">Zadzwoń</a>
   <a href="#rezerwuj" class="btn btn-primary">Rezerwuj</a>
 </div>
+
+<!-- GSAP (animacje) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
   // year
@@ -714,6 +729,46 @@
     form.querySelector('button[type=submit]').textContent = 'Prośba przygotowana ✓';
     setTimeout(() => { msg.scrollIntoView({behavior:'smooth', block:'center'}); }, 100);
   });
+
+  // ===== Animacje GSAP (uruchamiane tylko gdy biblioteka się załadowała) =====
+  // Treść jest domyślnie widoczna — jeśli GSAP nie wczyta się lub użytkownik
+  // preferuje ograniczony ruch, strona po prostu wyświetla się bez animacji.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Wejście sekcji hero
+    gsap.from('.hero-inner > *', {
+      y: 26, opacity: 0, duration: .8, ease: 'power3.out',
+      stagger: .09, delay: .15
+    });
+
+    // Ujawnianie elementów przy przewijaniu (stagger wewnątrz każdej sekcji)
+    const revealGroups = [
+      '#menu .sec-head', '.menu-tabs',
+      '#galeria .sec-head', '.gtile',
+      '#o-nas .about-grid > div', '.stat',
+      '#opinie .sec-head', '.rev-top', '.review',
+      '#rezerwuj .res-info .ri', '.res-form',
+      '#kontakt .sec-head', '.info-card', '.map-frame'
+    ];
+    revealGroups.forEach(sel => {
+      const els = gsap.utils.toArray(sel);
+      if (!els.length) return;
+      gsap.from(els, {
+        scrollTrigger: { trigger: els[0], start: 'top 85%' },
+        y: 28, opacity: 0, duration: .7, ease: 'power2.out', stagger: .07
+      });
+    });
+
+    // Animuj karty dań za każdym razem, gdy zmienia się zakładka menu
+    document.querySelectorAll('.menu-tab').forEach(t => t.addEventListener('click', () => {
+      const active = document.querySelector('.menu-panel.active');
+      if (active) gsap.from(active.querySelectorAll('.card'), {
+        y: 18, opacity: 0, duration: .45, ease: 'power2.out', stagger: .04
+      });
+    }));
+  }
 </script>
 </body>
 </html>
