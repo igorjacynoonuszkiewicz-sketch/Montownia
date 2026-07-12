@@ -4,305 +4,332 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Akita Ramen Trójmiasto — Gdańsk | Japoński ramen bar</title>
-<meta name="description" content="Akita Ramen Trójmiasto — minimalistyczny ramen bar inspirowany Tokio, ul. Bernarda Chrzanowskiego 11, Gdańsk. Głębokie buliony, ręczne tare, opcje wegańskie. 4,7/5 · 3000+ opinii. Zamów na Uber Eats i Wolt." />
+<meta name="description" content="Akita Ramen Trójmiasto — ramen bar w Gdańsku, ul. Bernarda Chrzanowskiego 11. Głębokie buliony, ręczne tare, opcje wegańskie. 4,7/5 · 3000+ opinii. Zamów na Uber Eats i Wolt." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --plum:#140a10; --plum-2:#1e0f18; --plum-3:#2a1420;
-    --surface:rgba(246,236,223,.045); --surface-2:rgba(246,236,223,.075);
-    --border:rgba(246,236,223,.10); --border-strong:rgba(246,236,223,.20);
-    --cream:#f6ecdf; --muted:#bfab9c; --faint:#8a7568;
-    --raspberry:#e0264f; --raspberry-soft:#ff5d78; --raspberry-glow:rgba(224,38,79,.4);
-    --wood:#cd9c5c; --wood-soft:#eccd93;
-    --radius:20px; --ease:cubic-bezier(.16,1,.3,1);
-    --maxw:1220px;
+    --void:#000000;
+    --bone:#ffffff;
+    --ash:#9a9a9a;
+    --silver:#bdbdbd;
+    --iris:#8052ff;
+    --iris-soft:#a688ff;
+    --saffron:#ffb829;
+    --verdant:#15846e;
+    --magenta:#c65cff;
+    --skyblue:#5c8fff;
+    --hairline:rgba(255,255,255,.09);
+    --radius-pill:22.5px;
+    --radius-tags:9999px;
+    --radius-cards:24px;
+    --maxw:1280px;
+    --ease:cubic-bezier(.16,1,.3,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--plum); color:var(--cream);
-    font-family:'Space Grotesk',system-ui,sans-serif; line-height:1.6;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background:var(--void); color:var(--bone);
+    font-family:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-weight:200; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  ::selection{background:var(--raspberry);color:#fff}
+  ::selection{background:var(--iris);color:#fff}
   a{color:inherit;text-decoration:none}
-  img,svg{max-width:100%;display:block}
-  section{scroll-margin-top:92px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-  .display{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.01em;line-height:.98}
-  .serif-it{font-family:'Fraunces',serif;font-style:italic;font-weight:400}
-  .grad-text{background:linear-gradient(100deg,var(--raspberry) 0%,var(--wood) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .outline-text{color:transparent;-webkit-text-stroke:1.4px var(--wood-soft)}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--wood-soft)}
-  .eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--wood),transparent)}
-  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.94rem;padding:13px 25px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .3s,border-color .3s;white-space:nowrap;font-family:'Space Grotesk',sans-serif}
+  img,svg,canvas{max-width:100%;display:block}
+  section{scroll-margin-top:90px;position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ===== TYPE SCALE (PPNeueMontreal spec → Inter substitute) ===== */
+  .t-caption{font-size:12px;line-height:1.5;font-weight:400}
+  .t-nav{font-size:14px;line-height:1.2;letter-spacing:.35px;font-weight:600;text-transform:uppercase}
+  .t-body{font-size:18px;line-height:1.5;font-weight:200}
+  .t-2xs{font-size:24px;line-height:1.25;letter-spacing:-.48px;font-weight:400}
+  .t-xs{font-size:27px;line-height:1;font-weight:400}
+  .t-sub{font-size:36px;line-height:1.2;font-weight:400}
+  .t-sm{font-size:clamp(1.9rem,4vw,42px);line-height:1.2;letter-spacing:-1.68px;font-weight:400}
+  .t-md{font-size:clamp(2.1rem,4.5vw,48px);line-height:1.1;letter-spacing:-1.68px;font-weight:400}
+  .t-lg{font-size:clamp(2.6rem,7vw,78px);line-height:1.1;letter-spacing:-3.12px;font-weight:400}
+  .t-display{font-size:clamp(3rem,8.4vw,113px);line-height:1.1;letter-spacing:-4.52px;font-weight:400}
+  .accent{color:var(--saffron)}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;letter-spacing:.35px;text-transform:uppercase;color:var(--saffron);margin-bottom:18px}
+
+  /* ===== BUTTONS ===== */
+  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-weight:600;font-size:14px;letter-spacing:.025em;text-transform:uppercase;padding:14.4px 15.96px;border-radius:var(--radius-pill);border:none;cursor:pointer;transition:transform .35s var(--ease),filter .35s var(--ease);white-space:nowrap}
   .btn:hover{transform:translateY(-2px)}
-  .btn-primary{background:linear-gradient(100deg,var(--raspberry),var(--raspberry-soft));color:#fff;box-shadow:0 10px 30px -10px var(--raspberry-glow)}
-  .btn-primary:hover{box-shadow:0 16px 40px -12px var(--raspberry-glow)}
-  .btn-ghost{background:var(--surface);border-color:var(--border-strong);color:var(--cream)}
-  .btn-ghost:hover{background:var(--surface-2);border-color:var(--wood)}
-  .card{background:linear-gradient(180deg,var(--surface),rgba(246,236,223,.015));border:1px solid var(--border);border-radius:var(--radius);transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;will-change:transform}
+  .btn-primary{background:var(--iris);color:#fff}
+  .btn-primary:hover{filter:brightness(1.12)}
+  .btn-text{background:none;color:var(--bone);padding:14.4px 4px;text-transform:none;font-weight:400;font-size:16px;letter-spacing:0}
+  .btn-text u{text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px}
+  .btn-text:hover{color:var(--saffron)}
 
-  /* ===== LIQUID GLASS BUTTON ===== */
-  .btn-glass{overflow:hidden;isolation:isolate;background:rgba(246,236,223,.05);border:1px solid rgba(246,236,223,.18)}
-  .btn-glass .glass-fx{position:absolute;inset:0;z-index:-1;border-radius:999px;overflow:hidden}
-  .btn-glass .glass-fx::before{content:"";position:absolute;inset:0;backdrop-filter:blur(3px) url(#liquid-glass-filter);-webkit-backdrop-filter:blur(3px)}
-  .btn-glass .glass-sheen{position:absolute;inset:0;z-index:-1;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -1px 6px rgba(0,0,0,.35),0 8px 22px -12px rgba(0,0,0,.6);pointer-events:none}
-  .btn-glass:hover{background:rgba(246,236,223,.09);border-color:var(--wood-soft)}
+  /* ===== LIQUID GLASS BUTTON (ported from liquid-glass-button.tsx) ===== */
+  .btn-glass{position:relative;overflow:visible;background:transparent;color:var(--bone);isolation:isolate}
+  .btn-glass .lg-shadow{position:absolute;inset:0;z-index:0;border-radius:var(--radius-pill);pointer-events:none;
+    box-shadow:
+      0 0 8px rgba(0,0,0,.25),0 2px 6px rgba(0,0,0,.35),
+      inset 3px 3px .5px -3.5px rgba(255,255,255,.5),
+      inset -3px -3px .5px -3.5px rgba(255,255,255,.5),
+      inset 1px 1px 1px -.5px rgba(255,255,255,.6),
+      inset -1px -1px 1px -.5px rgba(255,255,255,.6),
+      inset 0 0 6px 6px rgba(255,255,255,.09),
+      inset 0 0 2px 2px rgba(255,255,255,.06),
+      0 0 16px rgba(128,82,255,.25);
+  }
+  .btn-glass .lg-fx{position:absolute;inset:0;z-index:-1;border-radius:var(--radius-pill);overflow:hidden;backdrop-filter:blur(2px) url(#liquid-glass-filter);-webkit-backdrop-filter:blur(2px)}
+  .btn-glass .lg-label{position:relative;z-index:1;pointer-events:none}
+  .btn-glass:hover .lg-shadow{box-shadow:
+      0 0 10px rgba(0,0,0,.3),0 4px 10px rgba(0,0,0,.4),
+      inset 3px 3px .5px -3.5px rgba(255,255,255,.6),
+      inset -3px -3px .5px -3.5px rgba(255,255,255,.6),
+      inset 1px 1px 1px -.5px rgba(255,255,255,.7),
+      inset -1px -1px 1px -.5px rgba(255,255,255,.7),
+      inset 0 0 6px 6px rgba(255,255,255,.12),
+      inset 0 0 2px 2px rgba(255,255,255,.08),
+      0 0 22px rgba(128,82,255,.4);
+  }
 
-  /* ===== HEADER / NAV ===== */
-  header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
-  header.scrolled{background:rgba(15,7,12,.82);backdrop-filter:blur(16px);border-bottom-color:var(--border)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:76px}
-  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
-  .brand .logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#2e1620,#150910);border:1px solid var(--border-strong);box-shadow:0 6px 18px -8px rgba(0,0,0,.8)}
-  .brand .logo span{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;background:linear-gradient(120deg,var(--raspberry-soft),var(--wood-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .brand .bt{font-family:'Fraunces',serif;font-size:1.08rem;letter-spacing:.01em;line-height:1}
-  .brand .bs{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--wood-soft)}
-  .nav-links{display:flex;align-items:center;gap:2px}
-  .nav-links a{padding:9px 15px;border-radius:12px;color:var(--muted);font-size:.78rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;transition:color .25s,background .25s;position:relative;white-space:nowrap}
-  .nav-links a:hover{color:var(--cream)}
-  .nav-links a.active{color:var(--wood-soft);background:var(--surface)}
-  .nav-cta{display:flex;gap:8px;flex-shrink:0}
-  .burger{display:none;background:var(--surface);border:1px solid var(--border-strong);border-radius:12px;width:46px;height:46px;cursor:pointer;color:var(--cream)}
+  /* ===== HEADER / NAV — solid void black (same as canvas, so it reads as "no panel"), no border, no blur ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--void)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:88px}
+  .brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+  .brand .logo-tri{width:20px;height:20px}
+  .brand .bt{font-size:15px;font-weight:600;color:var(--bone);letter-spacing:0}
+  .brand .bs{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);display:block;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-size:14px;font-weight:600;letter-spacing:.025em;text-transform:uppercase;color:var(--ash);transition:color .25s}
+  .nav-links a:hover{color:var(--bone)}
+  .nav-links a.active{color:var(--bone)}
+  .nav-cta{display:flex;align-items:center;gap:18px;flex-shrink:0}
+  .nav-cta .btn-text{display:none}
+  .burger{display:none;background:none;border:none;width:40px;height:40px;cursor:pointer;color:var(--bone)}
+  @media(min-width:861px){.nav-cta .btn-text{display:inline-flex}}
 
   /* ===== SCROLL PROGRESS ===== */
-  .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--raspberry),var(--wood-soft));z-index:80;width:0%;box-shadow:0 0 12px var(--raspberry-glow)}
+  .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--iris),var(--saffron));z-index:80;width:0%}
 
   /* ===== HERO ===== */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;overflow:hidden;perspective:1200px}
-  .hero-bg{position:absolute;inset:0;z-index:0}
-  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;will-change:transform}
-  .blob.b1{width:560px;height:560px;background:radial-gradient(circle,rgba(224,38,79,.42),transparent 70%);top:-140px;right:-110px;animation:float 17s ease-in-out infinite}
-  .blob.b2{width:460px;height:460px;background:radial-gradient(circle,rgba(205,156,92,.28),transparent 70%);bottom:-130px;left:-90px;animation:float 20s ease-in-out infinite;animation-delay:-7s}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,transparent 40%,var(--plum) 92%);}
-  .grid-lines{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.2;mask-image:radial-gradient(ellipse at 55% 40%,#000,transparent 75%)}
-  .hero-kanji{position:absolute;right:-3%;top:6%;font-family:'Fraunces',serif;font-size:32vw;line-height:1;color:rgba(246,236,223,.03);font-weight:500;user-select:none;z-index:0}
-  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-26px)}}
+  .hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 60px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:100%}
+  .hero-copy{max-width:520px;position:relative;z-index:2}
+  .rating-chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border-radius:var(--radius-tags);padding:7px 15px;font-size:13px;font-weight:400;margin-bottom:24px;color:var(--silver)}
+  .rating-chip .stars{color:var(--saffron);letter-spacing:1px}
+  .rating-chip b{color:var(--bone);font-weight:600}
+  .rating-chip .dot{width:3px;height:3px;border-radius:50%;background:var(--ash)}
+  h1.hero-title{margin:6px 0 22px;color:var(--bone)}
+  .hero-sub{font-size:18px;font-weight:200;color:var(--silver);max-width:480px;margin-bottom:30px}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:400;color:var(--silver);background:rgba(255,255,255,.045);padding:8px 14px;border-radius:var(--radius-tags)}
+  .tag svg{width:14px;height:14px;color:var(--saffron)}
+  .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
 
-  /* abstract rotating 3D "bowl" motif */
-  .bowl-vis{position:absolute;right:2%;top:50%;width:min(46vw,560px);height:min(46vw,560px);transform:translateY(-50%);z-index:1;transform-style:preserve-3d;pointer-events:none}
-  .bowl-ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--border-strong);transform-style:preserve-3d}
-  .bowl-ring.r1{inset:0;background:conic-gradient(from 0deg,rgba(224,38,79,.22),rgba(205,156,92,.16),transparent 60%,rgba(224,38,79,.14));animation:spin 34s linear infinite;filter:blur(.5px)}
-  .bowl-ring.r2{inset:9%;border-color:rgba(246,236,223,.14);animation:spin 26s linear infinite reverse}
-  .bowl-ring.r3{inset:20%;background:radial-gradient(circle at 40% 35%,rgba(255,93,120,.5),rgba(224,38,79,.12) 55%,transparent 75%);border:none;filter:blur(6px);animation:pulse-glow 6s ease-in-out infinite}
-  .bowl-ring.r4{inset:34%;border-color:rgba(236,205,147,.35);animation:spin 40s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  @keyframes pulse-glow{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
-  .steam{position:absolute;left:50%;bottom:52%;width:3px;border-radius:99px;background:linear-gradient(180deg,rgba(246,236,223,.55),transparent);filter:blur(2px);animation:steam-rise 5.5s ease-in infinite}
-  .steam:nth-child(1){height:60px;margin-left:-24px;animation-delay:0s}
-  .steam:nth-child(2){height:90px;margin-left:0px;animation-delay:1.4s}
-  .steam:nth-child(3){height:70px;margin-left:22px;animation-delay:2.8s}
-  @keyframes steam-rise{0%{opacity:0;transform:translateY(0) scaleY(.7)}20%{opacity:.7}100%{opacity:0;transform:translateY(-140px) scaleY(1.3)}}
+  .hero-visual{position:relative;height:min(72vh,680px);z-index:1}
+  #particleCanvas{position:absolute;inset:-10% -10%;width:120%;height:120%}
+  .glow-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none}
+  .glow-blob.g1{width:340px;height:340px;background:radial-gradient(circle,var(--iris),transparent 70%);top:12%;right:8%}
+  .glow-blob.g2{width:260px;height:260px;background:radial-gradient(circle,var(--saffron),transparent 70%);bottom:8%;left:4%;opacity:.22}
+  .cta-glow{position:absolute;left:0;top:-30px;width:420px;height:180px;background:radial-gradient(ellipse,rgba(128,82,255,.35),rgba(255,184,41,.18) 55%,transparent 75%);filter:blur(20px);z-index:0;pointer-events:none}
 
-  .hero-inner{position:relative;z-index:2;max-width:760px}
-  .rating-chip{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:600;margin-bottom:26px}
-  .rating-chip .stars{color:var(--wood);letter-spacing:1px}
-  .rating-chip b{color:var(--cream)}
-  .rating-chip .dot{width:4px;height:4px;border-radius:50%;background:var(--faint)}
-  h1.hero-title{font-size:clamp(3rem,9vw,6.6rem);margin:6px 0 4px}
-  .hero-title .l2{display:block}
-  .hero-sub{font-size:clamp(1.02rem,2.3vw,1.32rem);color:var(--muted);max-width:540px;margin:22px 0 8px;font-weight:300}
-  .hero-sub .serif-it{color:var(--wood-soft)}
-  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px}
-  .tag{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:7px 13px;border-radius:999px}
-  .tag svg{width:15px;height:15px;color:var(--raspberry-soft)}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
-  .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;opacity:.6;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
-  .scroll-cue .line{width:1px;height:38px;background:linear-gradient(180deg,var(--wood-soft),transparent);animation:cue 2.2s ease-in-out infinite}
+  .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);z-index:2}
+  .scroll-cue .line{width:1px;height:38px;background:linear-gradient(180deg,var(--saffron),transparent);animation:cue 2.2s ease-in-out infinite}
   @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
   /* ===== MARQUEE ===== */
-  .marquee-band{position:relative;background:var(--raspberry);color:#150910;overflow:hidden;padding:16px 0;transform:rotate(-1deg) scale(1.02);border-top:1px solid rgba(0,0,0,.15);border-bottom:1px solid rgba(0,0,0,.15)}
-  .marquee-track{display:flex;width:max-content;gap:48px;animation:marquee 32s linear infinite}
+  .marquee-band{position:relative;background:var(--void);overflow:hidden;padding:20px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .marquee-track{display:flex;width:max-content;gap:52px;animation:marquee 30s linear infinite}
   .marquee-band:hover .marquee-track{animation-play-state:paused}
-  .marquee-track span{font-family:'Fraunces',serif;font-weight:500;font-size:1.35rem;letter-spacing:.01em;white-space:nowrap;display:flex;align-items:center;gap:10px}
-  .marquee-track span em{font-style:normal;opacity:.55;font-size:1rem}
+  .marquee-track span{font-size:1.35rem;font-weight:400;letter-spacing:-.02em;white-space:nowrap;display:flex;align-items:center;gap:10px}
+  .marquee-track span b{font-weight:600;color:var(--bone)}
+  .marquee-track span em{font-style:normal;color:var(--saffron);font-size:1rem;font-weight:400}
+  .marquee-track span:nth-child(even) b{color:var(--iris-soft)}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ===== BROTH THREAD SVG ===== */
-  .broth-thread{position:absolute;top:0;left:50%;width:2px;height:100%;transform:translateX(-50%);z-index:0;pointer-events:none;opacity:.5}
+  .broth-thread{position:absolute;top:0;left:50%;width:2px;height:100%;transform:translateX(-50%);z-index:0;pointer-events:none;opacity:.55}
   .broth-thread svg{position:absolute;top:0;left:0;overflow:visible}
 
-  /* ===== SECTION HEADINGS ===== */
-  .sec{padding:92px 0;position:relative}
-  .sec-head{max-width:640px;margin-bottom:44px}
+  /* ===== SECTIONS ===== */
+  .sec{padding:120px 0}
+  .sec-head{max-width:640px;margin-bottom:60px}
   .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-  .sec-head h2{font-size:clamp(2.1rem,5.5vw,3.5rem);margin:14px 0 14px}
-  .sec-head p{color:var(--muted);font-size:1.04rem;font-weight:300}
+  .sec-head h2{margin:8px 0 18px;color:var(--bone)}
+  .sec-head p{color:var(--silver);font-size:18px;font-weight:200}
 
-  /* reveal-on-scroll */
-  [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
   [data-reveal].is-visible{opacity:1;transform:translateY(0)}
-  [data-reveal="rise-3d"]{transform:translateY(36px) rotateX(10deg);transform-origin:bottom}
+  [data-reveal="rise-3d"]{transform:translateY(34px) rotateX(8deg);transform-origin:bottom}
   [data-reveal="rise-3d"].is-visible{transform:translateY(0) rotateX(0)}
   .reveal-parent{perspective:1000px}
 
-  /* ===== MENU ===== */
-  .menu-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
-  .menu-tab{display:inline-flex;align-items:center;gap:8px;padding:11px 21px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:.88rem;cursor:pointer;transition:.3s var(--ease);font-family:inherit}
-  .menu-tab:hover{color:var(--cream);border-color:var(--border-strong)}
-  .menu-tab.active{background:linear-gradient(100deg,var(--raspberry),var(--raspberry-soft));color:#fff;border-color:transparent;box-shadow:0 8px 22px -10px var(--raspberry-glow)}
+  /* zigzag two-col */
+  .zigzag{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .zigzag.reverse .col-text{order:2}
+  .zigzag.reverse .col-visual{order:1}
+  .col-text p{color:var(--silver);font-size:18px;font-weight:200;margin-bottom:16px;max-width:480px}
+  .col-text .source{font-size:13px;color:var(--ash);font-weight:400}
+  .feat-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .feat{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:400;color:var(--silver);background:rgba(255,255,255,.045);padding:9px 14px;border-radius:var(--radius-tags)}
+  .feat svg{width:14px;height:14px;color:var(--iris-soft)}
+
+  /* ===== MENU — borderless typographic rows ===== */
+  .menu-tabs{display:flex;gap:32px;flex-wrap:wrap;margin-bottom:50px;border-bottom:1px solid var(--hairline);padding-bottom:0}
+  .menu-tab{background:none;border:none;padding:0 0 16px;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.025em;text-transform:uppercase;color:var(--ash);cursor:pointer;position:relative;transition:color .25s}
+  .menu-tab:hover{color:var(--bone)}
+  .menu-tab.active{color:var(--bone)}
+  .menu-tab.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--iris)}
   .menu-panel{display:none;animation:fade .5s var(--ease)}
   .menu-panel.active{display:block}
-  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;perspective:1200px}
-  .dish{padding:24px;position:relative;overflow:hidden;transform-style:preserve-3d}
-  .dish:hover{border-color:var(--border-strong);box-shadow:0 24px 46px -26px rgba(0,0,0,.9)}
-  .dish-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:10px}
-  .dish-name{font-family:'Fraunces',serif;font-weight:500;font-size:1.28rem;line-height:1.1}
-  .dish-vol{font-size:.66rem;color:var(--faint);font-weight:600;letter-spacing:.1em;display:block;margin-top:4px;text-transform:uppercase}
-  .price{flex-shrink:0;font-family:'Fraunces',serif;font-weight:500;font-size:1rem;color:#fff;background:linear-gradient(100deg,var(--raspberry),var(--raspberry-soft));padding:6px 14px;border-radius:8px;box-shadow:0 6px 16px -8px var(--raspberry-glow)}
-  .dish-desc{font-size:.92rem;color:var(--muted);font-weight:300}
-  .badge-v{display:inline-flex;align-items:center;gap:5px;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:#9fd9a8;background:rgba(159,217,168,.1);border:1px solid rgba(159,217,168,.25);padding:3px 9px;border-radius:999px;margin-top:12px}
-  .badge-hot{display:inline-flex;align-items:center;gap:5px;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:var(--raspberry-soft);background:rgba(224,38,79,.1);border:1px solid rgba(224,38,79,.3);padding:3px 9px;border-radius:999px;margin-top:12px;margin-left:6px}
-  .menu-note{text-align:center;color:var(--faint);font-size:.86rem;margin-top:32px}
-  .list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;perspective:1200px}
-  .list-card{padding:24px}
-  .list-card h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;color:var(--wood-soft);margin-bottom:16px;display:flex;align-items:center;gap:9px}
-  .list-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border)}
-  .list-row:last-child{border-bottom:0}
-  .list-row .n{font-weight:500;font-size:.93rem}
-  .list-row .n small{display:block;color:var(--faint);font-weight:400;font-size:.76rem}
-  .list-row .p{font-family:'Fraunces',serif;font-weight:500;color:var(--raspberry-soft);font-size:.95rem;flex-shrink:0}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .menu-row{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;padding:30px 0;border-bottom:1px solid var(--hairline)}
+  .menu-row:first-child{padding-top:0}
+  .menu-row .mr-left{max-width:640px}
+  .menu-row .name{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:400;color:var(--bone);letter-spacing:-.01em}
+  .menu-row .desc{font-size:16px;font-weight:200;color:var(--silver);margin-top:8px}
+  .menu-row .price{flex-shrink:0;font-size:1.15rem;font-weight:400;color:var(--saffron);white-space:nowrap;padding-top:4px}
+  .badge-v,.badge-hot{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.02em;padding:4px 11px;border-radius:var(--radius-tags);margin-top:12px;margin-right:6px;background:rgba(255,255,255,.05)}
+  .badge-v{color:#9fd9a8}
+  .badge-hot{color:var(--saffron)}
+  .menu-note{color:var(--ash);font-size:14px;margin-top:32px}
+  .list-simple{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  .list-simple .list-row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--hairline)}
+  .list-simple .list-row .n{font-size:16px;font-weight:400;color:var(--bone)}
+  .list-simple .list-row .n small{display:block;color:var(--ash);font-weight:200;font-size:13px;margin-top:2px}
+  .list-simple .list-row .p{font-weight:400;color:var(--saffron);flex-shrink:0}
 
-  /* ===== WNETRZE (ABOUT) ===== */
-  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-  .about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;font-weight:300}
-  .about-grid .source{font-size:.76rem;color:var(--faint);font-style:italic}
-  .feat-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .feat{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:500;background:var(--surface);border:1px solid var(--border);padding:9px 14px;border-radius:999px}
-  .feat svg{width:16px;height:16px;color:var(--wood)}
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
-  .stat{padding:24px;text-align:center;perspective:800px}
-  .stat .num{font-family:'Fraunces',serif;font-weight:500;font-size:2.2rem;line-height:1}
-  .stat .num.p{color:var(--raspberry-soft)} .stat .num.g{color:var(--wood-soft)}
-  .stat .lab{font-size:.78rem;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+  /* ===== INTERIOR VISUAL ===== */
+  .interior-vis{position:relative;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+  .interior-vis .kanji-big{font-size:11rem;font-weight:400;color:transparent;-webkit-text-stroke:1.2px rgba(128,82,255,.5)}
+  .interior-vis .glow{position:absolute;width:80%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,184,41,.16),transparent 70%);filter:blur(50px)}
+  .interior-vis .lines{position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 1px,transparent 1px 46px)}
 
-  /* interior visual — abstract wood-plank + kitchen-line motif */
-  .interior-vis{position:relative;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;aspect-ratio:1/1;background:linear-gradient(160deg,var(--plum-2),var(--plum-3));display:grid;place-items:center}
-  .interior-vis .planks{position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(205,156,92,.10) 0 14px,transparent 14px 42px);transform:translateZ(0)}
-  .interior-vis .kanji-big{font-family:'Fraunces',serif;font-size:9rem;font-weight:400;color:transparent;-webkit-text-stroke:1.4px rgba(246,236,223,.16);position:relative;z-index:1}
-  .interior-vis .light{position:absolute;width:70%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(224,38,79,.25),transparent 70%);filter:blur(40px);z-index:0}
+  /* stats — no cards, plain numbers */
+  .stats-row{display:flex;flex-wrap:wrap;gap:60px;margin-top:64px}
+  .stat{min-width:140px}
+  .stat .num{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;letter-spacing:-.02em}
+  .stat .num.iris{color:var(--iris-soft)}
+  .stat .num.saf{color:var(--saffron)}
+  .stat .lab{font-size:13px;color:var(--ash);margin-top:6px}
 
-  /* ===== SIGNATURE DISHES — PARALLAX SHOWCASE ===== */
-  .sig-gallery{position:relative;height:100vh;overflow:hidden;border-radius:var(--radius);border:1px solid var(--border)}
-  .sig-cols{position:relative;display:flex;height:100%;gap:16px;padding:16px}
-  .sig-col{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;will-change:transform}
-  .sig-col.c2{top:-6%}
-  .sig-col.c3{top:-14%}
-  .sig-tile{position:relative;border-radius:16px;padding:28px 22px;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border:1px solid var(--border-strong);transform-style:preserve-3d}
-  .sig-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(10,4,7,.55));z-index:0}
-  .sig-tile .st-name{position:relative;z-index:1;font-family:'Fraunces',serif;font-weight:500;font-size:1.6rem;line-height:1.05}
-  .sig-tile .st-price{position:relative;z-index:1;font-family:'Fraunces',serif;font-weight:500;font-size:1rem;color:var(--wood-soft);margin-top:8px}
-  .sig-tile .st-tag{position:relative;z-index:1;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .sig-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;z-index:3;text-align:center;pointer-events:none}
-  .sig-overlay span{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);opacity:.7}
+  /* ===== SIGNATURE DISHES — dramatic Skiper30-style parallax ===== */
+  .sig-cue{text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ash);padding:36px 0}
+  .sig-gallery{position:relative;height:175vh;overflow:hidden}
+  .sig-cols{position:relative;display:flex;gap:2vw;height:100%;padding:0 2vw}
+  .sig-col{position:relative;flex:1;min-width:220px;display:flex;flex-direction:column;gap:2vw;will-change:transform}
+  .sig-col.c1{top:-45%}
+  .sig-col.c2{top:-95%}
+  .sig-col.c3{top:-45%}
+  .sig-col.c4{top:-75%}
+  .sig-tile{position:relative;border-radius:6px;padding:26px 22px;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+  .sig-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.6))}
+  .sig-tile .st-tag{position:relative;z-index:1;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);margin-bottom:8px}
+  .sig-tile .st-name{position:relative;z-index:1;font-size:1.5rem;font-weight:400;color:var(--bone);letter-spacing:-.02em}
+  .sig-tile .st-price{position:relative;z-index:1;font-size:1rem;color:var(--saffron);margin-top:6px}
 
-  /* ===== OPINIE (REVIEWS) ===== */
-  .rev-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:30px;margin-bottom:40px}
-  .rev-score{text-align:center}
-  .rev-score .big{font-family:'Fraunces',serif;font-weight:500;font-size:4.6rem;line-height:.9}
-  .rev-score .stars{color:var(--wood);font-size:1.3rem;letter-spacing:3px;margin:6px 0}
-  .rev-score .src{color:var(--muted);font-size:.85rem}
-  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;perspective:1200px}
-  .review{padding:26px}
-  .review .stars{color:var(--wood);letter-spacing:2px;font-size:.95rem;margin-bottom:12px}
-  .review p{font-size:.97rem;margin-bottom:18px;font-weight:300}
-  .review .who{display:flex;align-items:center;gap:12px}
-  .review .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#150910;background:linear-gradient(120deg,var(--raspberry-soft),var(--wood-soft))}
-  .review .who b{display:block;font-size:.9rem;font-weight:500}
-  .review .who small{color:var(--faint);font-size:.76rem}
+  /* ===== OPINIE — plain quotes ===== */
+  .rev-score{margin-bottom:60px}
+  .rev-score .big{font-size:clamp(3.4rem,7vw,5rem);font-weight:400;color:var(--bone)}
+  .rev-score .stars{color:var(--saffron);letter-spacing:3px;margin:6px 0;font-size:1.2rem}
+  .rev-score .src{color:var(--ash);font-size:14px}
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px 40px}
+  .review{border-top:1px solid var(--hairline);padding-top:24px}
+  .review .quote-mark{font-size:2.6rem;color:var(--iris-soft);line-height:.6;display:block;margin-bottom:8px}
+  .review p{font-size:17px;font-weight:200;color:var(--silver);margin-bottom:20px}
+  .review .who b{display:block;font-size:14px;font-weight:600;color:var(--bone)}
+  .review .who small{color:var(--ash);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
 
-  /* ===== ZAMOW (ORDER) ===== */
-  .order-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-  .order-cards{display:flex;flex-direction:column;gap:14px}
-  .order-card{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px}
-  .order-card .oc-name{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem}
-  .order-card .oc-sub{color:var(--muted);font-size:.85rem;margin-top:3px}
-  .hours-box{padding:26px}
-  .hours-box h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-  .open-badge{display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--border)}
-  .open-badge .pulse{width:8px;height:8px;border-radius:50%;background:#6fd68a;box-shadow:0 0 0 0 rgba(111,214,138,.6);animation:pulse-dot 2s infinite}
-  .open-badge.closed .pulse{background:var(--faint);animation:none;box-shadow:none}
+  /* ===== ZAMÓW ===== */
+  .order-rows{display:flex;flex-direction:column}
+  .order-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0;border-bottom:1px solid var(--hairline)}
+  .order-row:first-child{padding-top:0}
+  .order-row .oc-name{font-size:1.3rem;font-weight:400;color:var(--bone)}
+  .order-row .oc-sub{color:var(--ash);font-size:14px;margin-top:4px}
+  .hours-panel{position:relative}
+  .hours-panel h4{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;color:var(--ash);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .open-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 12px;border-radius:var(--radius-tags);background:rgba(255,255,255,.05);color:var(--bone);text-transform:none;letter-spacing:0}
+  .open-badge .pulse{width:7px;height:7px;border-radius:50%;background:#6fd68a;box-shadow:0 0 0 0 rgba(111,214,138,.6);animation:pulse-dot 2s infinite}
+  .open-badge.closed .pulse{background:var(--ash);animation:none;box-shadow:none}
   @keyframes pulse-dot{0%{box-shadow:0 0 0 0 rgba(111,214,138,.5)}70%{box-shadow:0 0 0 8px rgba(111,214,138,0)}100%{box-shadow:0 0 0 0 rgba(111,214,138,0)}}
-  .hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--border);font-size:.9rem}
+  .hours-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--hairline);font-size:15px;color:var(--silver)}
   .hours-row:last-child{border-bottom:0}
-  .hours-row span:first-child{color:var(--muted)}
-  .hours-row.today{color:var(--wood-soft);font-weight:600}
+  .hours-row.today{color:var(--saffron)}
 
   /* ===== KONTAKT ===== */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-  .info-card{padding:28px}
-  .info-card h4{font-family:'Fraunces',serif;font-weight:500;color:var(--wood-soft);margin-bottom:18px;display:flex;gap:10px;align-items:center;font-size:1.05rem}
-  .info-row{display:flex;gap:13px;padding:11px 0;align-items:flex-start}
-  .info-row svg{width:19px;height:19px;color:var(--raspberry-soft);flex-shrink:0;margin-top:2px}
-  .info-row .t{font-size:.93rem}
-  .info-row .t small{display:block;color:var(--faint);font-size:.78rem}
-  .map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);height:100%;min-height:340px}
-  .map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.4) sepia(.15) contrast(1.05) brightness(.85)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+  .info-block h4{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;color:var(--ash);margin-bottom:22px}
+  .info-row{display:flex;gap:14px;padding:14px 0;align-items:flex-start;border-bottom:1px solid var(--hairline)}
+  .info-row:last-child{border-bottom:0}
+  .info-row svg{width:18px;height:18px;color:var(--iris-soft);flex-shrink:0;margin-top:2px}
+  .info-row .t{font-size:15px;color:var(--silver)}
+  .info-row .t a{color:var(--bone);font-weight:400}
+  .info-row .t small{display:block;color:var(--ash);font-size:13px;margin-top:2px}
+  .map-frame{border-radius:6px;overflow:hidden;height:100%;min-height:340px;filter:grayscale(1) invert(.92) contrast(.9)}
+  .map-frame iframe{width:100%;height:100%;border:0}
 
   /* ===== FOOTER ===== */
-  footer{border-top:1px solid var(--border);padding:54px 0 30px;margin-top:30px;background:var(--plum-2)}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:36px}
-  .foot-grid p{color:var(--muted);font-size:.9rem;margin-top:14px;max-width:320px;font-weight:300}
-  .foot-grid h5{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wood-soft);margin-bottom:16px}
+  footer{border-top:1px solid var(--hairline);padding:60px 0 34px;margin-top:20px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .foot-grid p{color:var(--ash);font-size:14px;margin-top:14px;max-width:300px;font-weight:200}
+  .foot-grid h5{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);margin-bottom:16px}
   .foot-grid ul{list-style:none}
   .foot-grid li{padding:5px 0}
-  .foot-grid a{color:var(--muted);font-size:.9rem;transition:color .2s}
-  .foot-grid a:hover{color:var(--raspberry-soft)}
-  .socials{display:flex;gap:10px;margin-top:18px}
-  .socials a{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border);color:var(--muted);transition:.3s}
-  .socials a:hover{color:var(--wood);border-color:var(--wood);transform:translateY(-2px)}
+  .foot-grid a{color:var(--silver);font-size:14px;transition:color .2s}
+  .foot-grid a:hover{color:var(--saffron)}
+  .socials{display:flex;gap:14px;margin-top:20px}
+  .socials a{color:var(--ash);transition:.3s}
+  .socials a:hover{color:var(--iris-soft)}
   .socials svg{width:19px;height:19px}
-  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid var(--border);color:var(--faint);font-size:.82rem}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid var(--hairline);color:var(--ash);font-size:13px}
 
-  /* mobile bottom CTA bar */
-  .mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:rgba(15,7,12,.94);backdrop-filter:blur(14px);border-top:1px solid var(--border);padding:10px 14px;gap:10px}
-  .mobile-bar .btn{flex:1;justify-content:center;padding:12px}
+  .mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:55;background:rgba(0,0,0,.92);border-top:1px solid var(--hairline);padding:12px 16px;gap:10px}
+  .mobile-bar .btn{flex:1;justify-content:center}
 
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
   }
 
-  /* ===== RESPONSIVE ===== */
   @media(max-width:1040px){
-    .about-grid,.order-grid,.contact-grid{grid-template-columns:1fr}
+    .hero-grid,.zigzag,.contact-grid{grid-template-columns:1fr}
+    .zigzag .col-text,.zigzag.reverse .col-text{order:1}
+    .zigzag .col-visual,.zigzag.reverse .col-visual{order:2}
+    .hero-visual{height:320px;margin-top:10px}
     .foot-grid{grid-template-columns:1fr 1fr}
-    .bowl-vis{opacity:.5}
     .sig-gallery{height:auto}
-    .sig-cols{flex-direction:column;height:auto}
+    .sig-cols{flex-direction:column;height:auto;padding:0 5vw}
     .sig-col{top:0 !important;transform:none !important}
+    .sig-tile{aspect-ratio:16/9}
+    .list-simple{grid-template-columns:1fr}
   }
   @media(max-width:860px){
     .nav-links{display:none}
     .nav-cta{display:none}
     .burger{display:grid;place-items:center}
     .mobile-bar{display:flex}
-    body{padding-bottom:68px}
-    footer{margin-bottom:64px}
-    .bowl-vis{display:none}
+    body{padding-bottom:70px}
+    footer{margin-bottom:70px}
   }
   @media(max-width:560px){
     .foot-grid{grid-template-columns:1fr}
-    .menu-grid,.list-grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:1fr 1fr}
-    .order-card{flex-direction:column;align-items:flex-start}
+    .stats-row{gap:34px}
+    .order-row{flex-direction:column;align-items:flex-start}
   }
 </style>
 </head>
 <body>
 
-<!-- hidden liquid-glass SVG filter -->
+<!-- hidden liquid-glass SVG filter — literal port of the reference feTurbulence/feDisplacementMap chain -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <filter id="liquid-glass-filter" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="7" result="turbulence"/>
+    <filter id="liquid-glass-filter" x="0%" y="0%" width="100%" height="100%" colorInterpolationFilters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.05" numOctaves="1" seed="1" result="turbulence"/>
       <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise"/>
-      <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="26" xChannelSelector="R" yChannelSelector="B"/>
+      <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="70" xChannelSelector="R" yChannelSelector="B" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur"/>
+      <feComposite in="finalBlur" in2="finalBlur" operator="over"/>
     </filter>
+    <linearGradient id="triGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8052ff"/>
+      <stop offset="100%" stop-color="#15846e"/>
+    </linearGradient>
   </defs>
 </svg>
 
@@ -312,7 +339,7 @@
 <header id="header">
   <div class="wrap nav">
     <a href="#home" class="brand" aria-label="Akita Ramen Trójmiasto">
-      <span class="logo"><span>秋</span></span>
+      <svg class="logo-tri" viewBox="0 0 24 24" fill="url(#triGrad)"><path d="M12 2 L22 20 L2 20 Z"/></svg>
       <span>
         <span class="bt">Akita Ramen</span>
         <span class="bs">Trójmiasto</span>
@@ -325,12 +352,11 @@
       <a href="#wnetrze" data-sec="wnetrze">Wnętrze</a>
       <a href="#dania" data-sec="dania">Dania</a>
       <a href="#opinie" data-sec="opinie">Opinie</a>
-      <a href="#zamow" data-sec="zamow">Zamów</a>
       <a href="#kontakt" data-sec="kontakt">Kontakt</a>
     </nav>
 
     <div class="nav-cta">
-      <a href="tel:+48662447818" class="btn btn-ghost">Zadzwoń</a>
+      <a href="tel:+48662447818" class="btn btn-text"><u>Zadzwoń</u></a>
       <a href="#zamow" class="btn btn-primary">Zamów online</a>
     </div>
 
@@ -339,68 +365,58 @@
     </button>
   </div>
 
-  <!-- mobile nav panel -->
-  <nav id="navLinksMobile" style="display:none;position:fixed;inset:76px 0 auto 0;flex-direction:column;background:rgba(15,7,12,.97);backdrop-filter:blur(16px);padding:10px 14px 18px;border-bottom:1px solid var(--border);gap:2px">
-    <a href="#home" data-sec-m="home" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Start</a>
-    <a href="#menu" data-sec-m="menu" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Menu</a>
-    <a href="#wnetrze" data-sec-m="wnetrze" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Wnętrze</a>
-    <a href="#dania" data-sec-m="dania" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Dania</a>
-    <a href="#opinie" data-sec-m="opinie" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Opinie</a>
-    <a href="#zamow" data-sec-m="zamow" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Zamów</a>
-    <a href="#kontakt" data-sec-m="kontakt" style="padding:12px 10px;color:var(--muted);font-size:.9rem;font-weight:600">Kontakt</a>
+  <nav id="navLinksMobile" style="display:none;position:fixed;inset:88px 0 auto 0;flex-direction:column;background:rgba(0,0,0,.97);padding:10px 20px 24px;border-bottom:1px solid var(--hairline);gap:2px">
+    <a href="#home" data-sec-m="home" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Start</a>
+    <a href="#menu" data-sec-m="menu" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Menu</a>
+    <a href="#wnetrze" data-sec-m="wnetrze" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Wnętrze</a>
+    <a href="#dania" data-sec-m="dania" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Dania</a>
+    <a href="#opinie" data-sec-m="opinie" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Opinie</a>
+    <a href="#zamow" data-sec-m="zamow" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600;border-bottom:1px solid var(--hairline)">Zamów</a>
+    <a href="#kontakt" data-sec-m="kontakt" style="padding:14px 0;color:var(--ash);font-size:15px;font-weight:600">Kontakt</a>
   </nav>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
-  <div class="hero-bg">
-    <div class="blob b1" data-parallax="0.06"></div><div class="blob b2" data-parallax="-0.04"></div>
-    <div class="grid-lines"></div>
-    <div class="hero-kanji">麺</div>
-  </div>
-
-  <div class="bowl-vis" id="bowlVis">
-    <div class="bowl-ring r1"></div>
-    <div class="bowl-ring r2"></div>
-    <div class="bowl-ring r3"></div>
-    <div class="bowl-ring r4"></div>
-    <div class="steam"></div><div class="steam"></div><div class="steam"></div>
-  </div>
-
   <div class="broth-thread" id="brothThread">
     <svg width="2" height="4600" viewBox="0 0 2 4600" preserveAspectRatio="none">
       <path id="brothPath" d="M1,0 L1,4600" stroke="url(#brothGrad)" stroke-width="2" fill="none"/>
       <defs>
         <linearGradient id="brothGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#e0264f"/>
-          <stop offset="50%" stop-color="#cd9c5c"/>
-          <stop offset="100%" stop-color="#e0264f"/>
+          <stop offset="0%" stop-color="#8052ff"/>
+          <stop offset="50%" stop-color="#ffb829"/>
+          <stop offset="100%" stop-color="#8052ff"/>
         </linearGradient>
       </defs>
     </svg>
   </div>
 
-  <div class="wrap hero-inner">
-    <div class="rating-chip">
-      <span class="stars">★★★★★</span><b>4,7 / 5</b><span class="dot"></span><span>3000+ opinii · Uber Eats</span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="rating-chip">
+        <span class="stars">★★★★★</span><b>4,7 / 5</b><span class="dot"></span><span>3000+ opinii · Uber Eats</span>
+      </div>
+      <span class="eyebrow">Gdańsk · Ramen bar</span>
+      <h1 class="hero-title t-display">Akita Ramen<br><span class="accent">Trójmiasto</span></h1>
+      <p class="hero-sub">Ramen bar w sercu Gdańska — głębokie buliony gotowane godzinami, ręcznie robione tare i otwarta kuchnia na oczach gości. Bez pośpiechu, bez zbędnego hałasu.</p>
+      <div class="hero-tags">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7c0 6 3 9 7 9M19 7c0 6-3 9-7 9" stroke-linecap="round"/></svg>Ramen 41–54 zł</span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><path d="M12 8c-2 2-2 4 0 5"/></svg>Opcje wegańskie</span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c2 4 6 6 6 11a6 6 0 0 1-12 0c0-5 4-7 6-11Z"/></svg>Bardzo pikantne warianty</span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V4H8v2"/></svg>Uber Eats &amp; Wolt</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary">Zobacz menu</a>
+        <a href="#zamow" class="btn btn-glass"><span class="lg-shadow"></span><span class="lg-fx"></span><span class="lg-label">Zamów online</span></a>
+        <a href="tel:+48662447818" class="btn btn-text"><u>Zadzwoń</u></a>
+        <div class="cta-glow"></div>
+      </div>
     </div>
-    <span class="eyebrow">Gdańsk · Ramen bar</span>
-    <h1 class="hero-title display">
-      Akita Ramen
-      <span class="l2 serif-it grad-text">Trójmiasto</span>
-    </h1>
-    <p class="hero-sub">Minimalistyczny ramen bar inspirowany <span class="serif-it">tokijskimi</span> jadłodajniami — głębokie buliony gotowane godzinami, ręcznie robione tare i otwarta kuchnia na oczach gości. Bez pośpiechu, bez zbędnego hałasu.</p>
-    <div class="hero-tags">
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7c0 6 3 9 7 9M19 7c0 6-3 9-7 9" stroke-linecap="round"/></svg>Ramen 41–54 zł</span>
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><path d="M12 8c-2 2-2 4 0 5"/></svg>Opcje wegańskie</span>
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c2 4 6 6 6 11a6 6 0 0 1-12 0c0-5 4-7 6-11Z"/></svg>Bardzo pikantne warianty</span>
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V4H8v2"/></svg>Uber Eats &amp; Wolt</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#menu" class="btn btn-primary">Zobacz menu
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#zamow" class="btn btn-glass"><span class="glass-fx"></span><span class="glass-sheen"></span>Zamów online</a>
-      <a href="tel:+48662447818" class="btn btn-ghost">Zadzwoń</a>
+
+    <div class="hero-visual">
+      <div class="glow-blob g1"></div>
+      <div class="glow-blob g2"></div>
+      <canvas id="particleCanvas"></canvas>
     </div>
   </div>
 
@@ -410,109 +426,69 @@
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-band">
   <div class="marquee-track">
-    <span>HARAKIRI TANTAN <em>🔥 bardzo pikantne</em></span>
-    <span>AKITA RAMEN <em>szarpana łopatka</em></span>
-    <span>TRICITY CHUNKY RAMEN <em>karaage w shio koji</em></span>
-    <span>MAPO TOFU VEGAN <em>🌱 doubanjiang</em></span>
-    <span>SHOYU VEGAN <em>🌱 klasyka</em></span>
-    <span>AKITA SPICY LOVE <em>🔥 pikantne</em></span>
-    <span>HARAKIRI TANTAN <em>🔥 bardzo pikantne</em></span>
-    <span>AKITA RAMEN <em>szarpana łopatka</em></span>
-    <span>TRICITY CHUNKY RAMEN <em>karaage w shio koji</em></span>
-    <span>MAPO TOFU VEGAN <em>🌱 doubanjiang</em></span>
-    <span>SHOYU VEGAN <em>🌱 klasyka</em></span>
-    <span>AKITA SPICY LOVE <em>🔥 pikantne</em></span>
+    <span><b>Harakiri Tantan</b> <em>bardzo pikantne</em></span>
+    <span><b>Akita Ramen</b> <em>szarpana łopatka</em></span>
+    <span><b>Tricity Chunky Ramen</b> <em>karaage w shio koji</em></span>
+    <span><b>Mapo Tofu Vegan</b> <em>wege · doubanjiang</em></span>
+    <span><b>Shoyu Vegan</b> <em>wege klasyka</em></span>
+    <span><b>Akita Spicy Love</b> <em>pikantne</em></span>
+    <span><b>Harakiri Tantan</b> <em>bardzo pikantne</em></span>
+    <span><b>Akita Ramen</b> <em>szarpana łopatka</em></span>
+    <span><b>Tricity Chunky Ramen</b> <em>karaage w shio koji</em></span>
+    <span><b>Mapo Tofu Vegan</b> <em>wege · doubanjiang</em></span>
+    <span><b>Shoyu Vegan</b> <em>wege klasyka</em></span>
+    <span><b>Akita Spicy Love</b> <em>pikantne</em></span>
   </div>
 </div>
 
 <!-- ============ MENU ============ -->
 <section class="sec reveal-parent" id="menu">
   <div class="wrap">
-    <div class="sec-head center" data-reveal>
+    <div class="sec-head" data-reveal>
       <span class="eyebrow">Nasze menu</span>
-      <h2 class="display">Buliony gotowane <span class="grad-text serif-it">godzinami</span></h2>
+      <h2 class="t-lg">Buliony gotowane godzinami</h2>
       <p>Ceny z karty online (Uber Eats), mogą się nieznacznie różnić od menu w lokalu.</p>
     </div>
 
     <div class="menu-tabs" id="menuTabs" data-reveal>
-      <button class="menu-tab active" data-tab="ramen">🍜 Ramen</button>
-      <button class="menu-tab" data-tab="wege">🌱 Wege</button>
-      <button class="menu-tab" data-tab="dzieci">🎎 Dla dzieci</button>
-      <button class="menu-tab" data-tab="przystawki">🥢 Przystawki</button>
+      <button class="menu-tab active" data-tab="ramen">Ramen</button>
+      <button class="menu-tab" data-tab="wege">Wege</button>
+      <button class="menu-tab" data-tab="dzieci">Dla dzieci</button>
+      <button class="menu-tab" data-tab="przystawki">Przystawki</button>
     </div>
 
-    <!-- RAMEN -->
     <div class="menu-panel active" data-panel="ramen">
-      <div class="menu-grid">
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Tricity Chunky Ramen</span></div><span class="price">53 zł</span></div>
-          <p class="dish-desc">Kurczak karaage w shio koji, gari, wakame, jajko, zest z pomarańczy, sezam, dymka, nori.</p>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Harakiri Tantan</span></div><span class="price">54 zł</span></div>
-          <p class="dish-desc">Pikantny tantan — najczęściej wybierana pozycja w menu.</p>
-          <span class="badge-hot">🔥 Bardzo pikantne</span>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Akita Ramen</span></div><span class="price">51 zł</span></div>
-          <p class="dish-desc">Szarpana łopatka, kanpyo, wakame, chili, sezam, całe jajko, dymka, nori, olej sezamowy, shoyu tare.</p>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Akita Spicy Love</span></div><span class="price">51 zł</span></div>
-          <p class="dish-desc">Wersja Akita Ramen z dużą porcją chili.</p>
-          <span class="badge-hot">🔥 Pikantne</span>
-        </article>
+      <div data-reveal>
+        <div class="menu-row"><div class="mr-left"><span class="name">Tricity Chunky Ramen</span><p class="desc">Kurczak karaage w shio koji, gari, wakame, jajko, zest z pomarańczy, sezam, dymka, nori.</p></div><span class="price">53 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Harakiri Tantan</span><p class="desc">Pikantny tantan — najczęściej wybierana pozycja w menu.</p><span class="badge-hot">Bardzo pikantne</span></div><span class="price">54 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Akita Ramen</span><p class="desc">Szarpana łopatka, kanpyo, wakame, chili, sezam, całe jajko, dymka, nori, olej sezamowy, shoyu tare.</p></div><span class="price">51 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Akita Spicy Love</span><p class="desc">Wersja Akita Ramen z dużą porcją chili.</p><span class="badge-hot">Pikantne</span></div><span class="price">51 zł</span></div>
       </div>
     </div>
 
-    <!-- WEGE -->
     <div class="menu-panel" data-panel="wege">
-      <div class="menu-grid">
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Mapo Tofu Vegan</span></div><span class="price">52 zł</span></div>
-          <p class="dish-desc">Mapo tofu w paście doubanjiang, biała kapusta, sezam, pieprz syczuański, olej rayu, vegan tantan tare.</p>
-          <span class="badge-v">🌱 Wegańskie</span><span class="badge-hot">🔥 Pikantne</span>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Shoyu Vegan</span></div><span class="price">50 zł</span></div>
-          <p class="dish-desc">Wegańska wersja klasycznego shoyu ramen.</p>
-          <span class="badge-v">🌱 Wegańskie</span>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Kids Veggie Ramen</span></div><span class="price">41 zł</span></div>
-          <p class="dish-desc">Inari tofu, wakame.</p>
-          <span class="badge-v">🌱 Wegańskie</span>
-        </article>
+      <div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Mapo Tofu Vegan</span><p class="desc">Mapo tofu w paście doubanjiang, biała kapusta, sezam, pieprz syczuański, olej rayu, vegan tantan tare.</p><span class="badge-v">Wegańskie</span><span class="badge-hot">Pikantne</span></div><span class="price">52 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Shoyu Vegan</span><p class="desc">Wegańska wersja klasycznego shoyu ramen.</p><span class="badge-v">Wegańskie</span></div><span class="price">50 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Kids Veggie Ramen</span><p class="desc">Inari tofu, wakame.</p><span class="badge-v">Wegańskie</span></div><span class="price">41 zł</span></div>
       </div>
     </div>
 
-    <!-- DZIECI -->
     <div class="menu-panel" data-panel="dzieci">
-      <div class="menu-grid">
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Kids Ramen</span></div><span class="price">41 zł</span></div>
-          <p class="dish-desc">Kawałek kurczaka, całe jajko, nori, shoyu tare.</p>
-        </article>
-        <article class="card dish" data-reveal="rise-3d" data-tilt>
-          <div class="dish-top"><div><span class="dish-name">Kids Veggie Ramen</span></div><span class="price">41 zł</span></div>
-          <p class="dish-desc">Inari tofu, wakame.</p>
-          <span class="badge-v">🌱 Wegańskie</span>
-        </article>
+      <div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Kids Ramen</span><p class="desc">Kawałek kurczaka, całe jajko, nori, shoyu tare.</p></div><span class="price">41 zł</span></div>
+        <div class="menu-row"><div class="mr-left"><span class="name">Kids Veggie Ramen</span><p class="desc">Inari tofu, wakame.</p><span class="badge-v">Wegańskie</span></div><span class="price">41 zł</span></div>
       </div>
     </div>
 
-    <!-- PRZYSTAWKI -->
     <div class="menu-panel" data-panel="przystawki">
-      <div class="list-grid">
-        <div class="card list-card">
-          <h4>🥢 Przystawki</h4>
-          <div class="list-row"><span class="n">Tori Bites <small>przystawka z kurczaka</small></span><span class="p">27 zł</span></div>
-          <div class="list-row"><span class="n">Inari Tofu (Kitsune) <small>🌱 wege</small></span><span class="p">20 zł</span></div>
-          <div class="list-row"><span class="n">Pikle z ogórków (Kyurizuke) <small>🌱 wege</small></span><span class="p">20 zł</span></div>
-          <div class="list-row"><span class="n">Goma Wakame <small>🌱 wege</small></span><span class="p">20 zł</span></div>
-          <div class="list-row"><span class="n">Menma <small>🌱 wege</small></span><span class="p">20 zł</span></div>
-          <div class="list-row"><span class="n">Rayu Daikon</span><span class="p">20 zł</span></div>
-        </div>
+      <div class="list-simple">
+        <div class="list-row"><span class="n">Tori Bites<small>przystawka z kurczaka</small></span><span class="p">27 zł</span></div>
+        <div class="list-row"><span class="n">Inari Tofu (Kitsune)<small>wege</small></span><span class="p">20 zł</span></div>
+        <div class="list-row"><span class="n">Pikle z ogórków (Kyurizuke)<small>wege</small></span><span class="p">20 zł</span></div>
+        <div class="list-row"><span class="n">Goma Wakame<small>wege</small></span><span class="p">20 zł</span></div>
+        <div class="list-row"><span class="n">Menma<small>wege</small></span><span class="p">20 zł</span></div>
+        <div class="list-row"><span class="n">Rayu Daikon</span><span class="p">20 zł</span></div>
       </div>
     </div>
 
@@ -521,14 +497,21 @@
 </section>
 
 <!-- ============ WNĘTRZE ============ -->
-<section class="sec reveal-parent" id="wnetrze" style="background:var(--plum-2)">
+<section class="sec reveal-parent" id="wnetrze">
   <div class="wrap">
-    <div class="about-grid">
-      <div data-reveal>
+    <div class="zigzag reverse">
+      <div class="col-visual" data-reveal data-tilt data-tilt-max="6">
+        <div class="interior-vis">
+          <div class="lines"></div>
+          <div class="glow"></div>
+          <span class="kanji-big">田</span>
+        </div>
+      </div>
+      <div class="col-text" data-reveal>
         <span class="eyebrow">Wnętrze</span>
-        <h2 class="display" style="font-size:clamp(2rem,5vw,3rem);margin:14px 0 20px">Tokijski minimalizm <span class="grad-text serif-it">w Gdańsku</span></h2>
+        <h2 class="t-md">Tokijski minimalizm <span class="accent">w Gdańsku</span></h2>
         <p>Minimalistyczne, jasne wnętrze inspirowane tokijskimi ramen barami — drewniane akcenty, otwarta kuchnia widoczna z sali, subtelne oświetlenie.</p>
-        <p>Atmosfera spokojna, skoncentrowana na jedzeniu, bez zbędnego "hałasu" wizualnego. Miska, pałeczki i para unosząca się znad bulionu — reszta jest zbędna.</p>
+        <p>Atmosfera spokojna, skoncentrowana na jedzeniu, bez zbędnego „hałasu” wizualnego. Miska, pałeczki i para unosząca się znad bulionu — reszta jest zbędna.</p>
         <p class="source">Źródło opisu: Eatzon.pl (katalog restauracji Gdańsk).</p>
         <div class="feat-list">
           <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Otwarta kuchnia</span>
@@ -537,113 +520,108 @@
           <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Bez zbędnego hałasu</span>
         </div>
       </div>
-      <div data-reveal data-tilt data-tilt-max="6">
-        <div class="interior-vis">
-          <div class="planks"></div>
-          <div class="light"></div>
-          <span class="kanji-big">田</span>
-        </div>
-      </div>
     </div>
 
-    <div class="stats" style="margin-top:60px;grid-template-columns:repeat(4,1fr)" data-reveal>
-      <div class="card stat" data-tilt><div class="num g">4,7</div><div class="lab">Ocena Uber Eats ★</div></div>
-      <div class="card stat" data-tilt><div class="num p">3000+</div><div class="lab">Opinii klientów</div></div>
-      <div class="card stat" data-tilt><div class="num g">41–54</div><div class="lab">zł za ramen</div></div>
-      <div class="card stat" data-tilt><div class="num p">2</div><div class="lab">Kanały: Uber Eats &amp; Wolt</div></div>
+    <div class="stats-row" data-reveal>
+      <div class="stat"><div class="num saf">4,7</div><div class="lab">Ocena Uber Eats ★</div></div>
+      <div class="stat"><div class="num iris">3000+</div><div class="lab">Opinii klientów</div></div>
+      <div class="stat"><div class="num saf">41–54</div><div class="lab">zł za ramen</div></div>
+      <div class="stat"><div class="num iris">2</div><div class="lab">Kanały: Uber Eats &amp; Wolt</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ DANIA SYGNATUROWE (PARALLAX) ============ -->
-<section class="sec" id="dania">
+<!-- ============ DANIA SYGNATUROWE — Skiper30-style parallax ============ -->
+<section class="sec" id="dania" style="padding-bottom:0">
   <div class="wrap">
     <div class="sec-head center" data-reveal>
       <span class="eyebrow">Dania sygnaturowe</span>
-      <h2 class="display">Miska, która <span class="grad-text serif-it">zapada w pamięć</span></h2>
-      <p>Bez zdjęć stockowych — typografia i kolor mówią same za siebie. Przewiń, aby zobaczyć.</p>
+      <h2 class="t-lg">Miska, która zapada w pamięć</h2>
+      <p>Bez zdjęć stockowych — typografia i kolor mówią same za siebie.</p>
     </div>
   </div>
-  <div class="wrap">
-    <div class="sig-gallery" id="sigGallery">
-      <div class="sig-cols" id="sigCols">
-        <div class="sig-col c1" data-speed="0.10">
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#3a0f1e,#1a0a12)"><span class="st-tag">🔥 Najczęściej wybierane</span><span class="st-name display">Harakiri Tantan</span><span class="st-price">54 zł</span></div>
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#2a1420,#150a10)"><span class="st-tag">Sygnaturowe</span><span class="st-name display">Akita Ramen</span><span class="st-price">51 zł</span></div>
-        </div>
-        <div class="sig-col c2" data-speed="0.18">
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#4a3016,#1a0f0a)"><span class="st-tag">Kurczak karaage</span><span class="st-name display">Tricity Chunky Ramen</span><span class="st-price">53 zł</span></div>
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#173321,#0c1a12)"><span class="st-tag">🌱 Wegańskie · 🔥 Pikantne</span><span class="st-name display">Mapo Tofu Vegan</span><span class="st-price">52 zł</span></div>
-        </div>
-        <div class="sig-col c3" data-speed="0.07">
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#3a1830,#170a15)"><span class="st-tag">🔥 Duża porcja chili</span><span class="st-name display">Akita Spicy Love</span><span class="st-price">51 zł</span></div>
-          <div class="sig-tile card" style="background:linear-gradient(150deg,#22301c,#0e150c)"><span class="st-tag">🌱 Klasyka po wegańsku</span><span class="st-name display">Shoyu Vegan</span><span class="st-price">50 zł</span></div>
-        </div>
+  <p class="sig-cue">przewiń w dół, aby zobaczyć</p>
+  <div class="sig-gallery" id="sigGallery">
+    <div class="sig-cols" id="sigCols">
+      <div class="sig-col c1" data-speed="2">
+        <div class="sig-tile" style="background:linear-gradient(150deg,#241148,#0a0612)"><span class="st-tag">Najczęściej wybierane</span><span class="st-name">Harakiri Tantan</span><span class="st-price">54 zł</span></div>
+        <div class="sig-tile" style="background:linear-gradient(150deg,#3a2a08,#120c02)"><span class="st-tag">Sygnaturowe</span><span class="st-name">Akita Ramen</span><span class="st-price">51 zł</span></div>
+      </div>
+      <div class="sig-col c2" data-speed="3.3">
+        <div class="sig-tile" style="background:linear-gradient(150deg,#0f2e26,#050f0c)"><span class="st-tag">Kurczak karaage</span><span class="st-name">Tricity Chunky Ramen</span><span class="st-price">53 zł</span></div>
+        <div class="sig-tile" style="background:linear-gradient(150deg,#2a123f,#0c0714)"><span class="st-tag">Wege · pikantne</span><span class="st-name">Mapo Tofu Vegan</span><span class="st-price">52 zł</span></div>
+      </div>
+      <div class="sig-col c3" data-speed="1.25">
+        <div class="sig-tile" style="background:linear-gradient(150deg,#331235,#0d0511)"><span class="st-tag">Duża porcja chili</span><span class="st-name">Akita Spicy Love</span><span class="st-price">51 zł</span></div>
+        <div class="sig-tile" style="background:linear-gradient(150deg,#123023,#05120c)"><span class="st-tag">Klasyka po wegańsku</span><span class="st-name">Shoyu Vegan</span><span class="st-price">50 zł</span></div>
+      </div>
+      <div class="sig-col c4" data-speed="3">
+        <div class="sig-tile" style="background:linear-gradient(150deg,#241148,#0a0612)"><span class="st-tag">Najczęściej wybierane</span><span class="st-name">Harakiri Tantan</span><span class="st-price">54 zł</span></div>
+        <div class="sig-tile" style="background:linear-gradient(150deg,#0f2e26,#050f0c)"><span class="st-tag">Kurczak karaage</span><span class="st-name">Tricity Chunky Ramen</span><span class="st-price">53 zł</span></div>
       </div>
     </div>
   </div>
+  <p class="sig-cue">przewiń w górę, aby zobaczyć</p>
 </section>
 
 <!-- ============ OPINIE ============ -->
-<section class="sec reveal-parent" id="opinie" style="background:var(--plum-2)">
+<section class="sec reveal-parent" id="opinie">
   <div class="wrap">
     <div class="sec-head center" data-reveal>
       <span class="eyebrow">Opinie</span>
-      <h2 class="display">Co mówią <span class="grad-text serif-it">goście</span></h2>
+      <h2 class="t-lg">Co mówią goście</h2>
     </div>
-    <div class="rev-top" data-reveal>
-      <div class="rev-score">
-        <div class="big grad-text">4,7</div>
-        <div class="stars">★★★★★</div>
-        <div class="src">na podstawie 3000+ ocen na Uber Eats</div>
-      </div>
+    <div class="rev-score" style="text-align:center" data-reveal>
+      <div class="big">4,7</div>
+      <div class="stars">★★★★★</div>
+      <div class="src">na podstawie 3000+ ocen na Uber Eats</div>
     </div>
     <div class="rev-grid" data-reveal>
-      <article class="card review" data-tilt>
-        <div class="stars">★★★★★</div>
-        <p>„Harakiri Tantan robi robotę — pikantne, głębokie, dokładnie tak, jak lubię. Bulion nie jest wodnisty, czuć że stoi godzinami.”</p>
-        <div class="who"><span class="av">K</span><div><b>Kamil&nbsp;W.</b><small>Opinia · Uber Eats</small></div></div>
+      <article class="review">
+        <span class="quote-mark">"</span>
+        <p>Harakiri Tantan robi robotę — pikantne, głębokie, dokładnie tak, jak lubię. Bulion nie jest wodnisty, czuć że stoi godzinami.</p>
+        <div class="who"><b>Kamil W.</b><small>Opinia · Uber Eats</small></div>
       </article>
-      <article class="card review" data-tilt>
-        <div class="stars">★★★★★</div>
-        <p>„Wreszcie porządna wegańska opcja — Mapo Tofu Vegan trzyma poziom pikantności i smaku, bez kompromisów.”</p>
-        <div class="who"><span class="av">A</span><div><b>Anna&nbsp;S.</b><small>Opinia · Uber Eats</small></div></div>
+      <article class="review">
+        <span class="quote-mark">"</span>
+        <p>Wreszcie porządna wegańska opcja — Mapo Tofu Vegan trzyma poziom pikantności i smaku, bez kompromisów.</p>
+        <div class="who"><b>Anna S.</b><small>Opinia · Uber Eats</small></div>
       </article>
-      <article class="card review" data-tilt>
-        <div class="stars">★★★★★</div>
-        <p>„Akita Ramen z szarpaną łopatką to danie, po które wracam co tydzień. Kameralnie, bez pośpiechu, zawsze świeżo.”</p>
-        <div class="who"><span class="av">M</span><div><b>Michał&nbsp;P.</b><small>Opinia · Uber Eats</small></div></div>
+      <article class="review">
+        <span class="quote-mark">"</span>
+        <p>Akita Ramen z szarpaną łopatką to danie, po które wracam co tydzień. Kameralnie, bez pośpiechu, zawsze świeżo.</p>
+        <div class="who"><b>Michał P.</b><small>Opinia · Uber Eats</small></div>
       </article>
     </div>
-    <p class="menu-note">Cytaty ilustrują typowe opinie gości. Wszystkie oceny liczbowe (4,7/5, 3000+ ocen) pochodzą bezpośrednio z profilu Uber Eats.</p>
+    <p class="menu-note" style="text-align:center;margin-top:40px">Cytaty ilustrują typowe opinie gości. Oceny liczbowe (4,7/5, 3000+ ocen) pochodzą bezpośrednio z profilu Uber Eats.</p>
   </div>
 </section>
 
 <!-- ============ ZAMÓW ============ -->
 <section class="sec reveal-parent" id="zamow">
   <div class="wrap">
-    <div class="order-grid">
-      <div data-reveal>
+    <div class="zigzag">
+      <div class="col-text" data-reveal>
         <span class="eyebrow">Zamów online</span>
-        <h2 class="display">Dowóz i odbiór <span class="grad-text serif-it">własny</span></h2>
-        <p style="color:var(--muted);font-weight:300;margin:16px 0 30px;max-width:480px">Zamawiaj przez Uber Eats lub Wolt — wyszukaj nas jako <strong>Akita Ramen Trójmiasto</strong>. Wolisz zadzwonić? Chętnie doradzimy z wyborem tare.</p>
-        <div class="order-cards">
-          <a href="https://www.ubereats.com/pl" target="_blank" rel="noopener" class="card order-card">
+        <h2 class="t-md">Dowóz i odbiór własny</h2>
+        <p>Zamawiaj przez Uber Eats lub Wolt — wyszukaj nas jako <strong style="color:var(--bone);font-weight:400">Akita Ramen Trójmiasto</strong>. Wolisz zadzwonić? Chętnie doradzimy z wyborem tare.</p>
+        <div class="order-rows">
+          <a href="https://www.ubereats.com/pl" target="_blank" rel="noopener" class="order-row">
             <div><div class="oc-name">Uber Eats</div><div class="oc-sub">wyszukaj „Akita Ramen Trójmiasto”</div></div>
             <span class="btn btn-primary">Zamów</span>
           </a>
-          <a href="https://wolt.com/pl" target="_blank" rel="noopener" class="card order-card">
+          <a href="https://wolt.com/pl" target="_blank" rel="noopener" class="order-row">
             <div><div class="oc-name">Wolt</div><div class="oc-sub">wyszukaj „Akita Ramen Trójmiasto”</div></div>
-            <span class="btn btn-glass"><span class="glass-fx"></span><span class="glass-sheen"></span>Zamów</span>
+            <span class="btn btn-glass"><span class="lg-shadow"></span><span class="lg-fx"></span><span class="lg-label">Zamów</span></span>
           </a>
-          <a href="tel:+48662447818" class="card order-card">
+          <a href="tel:+48662447818" class="order-row">
             <div><div class="oc-name">Zadzwoń: 662 447 818</div><div class="oc-sub">rezerwacja miejsc na miejscu</div></div>
-            <span class="btn btn-ghost">Zadzwoń</span>
+            <span class="btn btn-text"><u>Zadzwoń</u></span>
           </a>
         </div>
       </div>
-      <div data-reveal>
-        <div class="hours-box card">
+      <div class="col-visual" data-reveal>
+        <div class="hours-panel">
           <h4>Godziny otwarcia <span class="open-badge" id="openBadge"><span class="pulse"></span><span id="openText">sprawdzanie…</span></span></h4>
           <div class="hours-row" data-day="1"><span>Poniedziałek</span><span>zamknięte</span></div>
           <div class="hours-row" data-day="2"><span>Wtorek</span><span>13:05 – 20:00</span></div>
@@ -659,23 +637,23 @@
 </section>
 
 <!-- ============ KONTAKT ============ -->
-<section class="sec reveal-parent" id="kontakt" style="background:var(--plum-2)">
+<section class="sec reveal-parent" id="kontakt">
   <div class="wrap">
     <div class="sec-head center" data-reveal>
       <span class="eyebrow">Kontakt</span>
-      <h2 class="display">Znajdź <span class="grad-text serif-it">nas</span></h2>
+      <h2 class="t-lg">Znajdź nas</h2>
       <p>ul. Bernarda Chrzanowskiego 11, Gdańsk.</p>
     </div>
     <div class="contact-grid" data-reveal>
-      <div style="display:flex;flex-direction:column;gap:20px">
-        <div class="card info-card">
+      <div style="display:flex;flex-direction:column;gap:44px">
+        <div class="info-block">
           <h4>Dane kontaktowe</h4>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="t">ul. Bernarda Chrzanowskiego 11<small>80-278 Gdańsk</small></div></div>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 9 6 15 15 15a2 2 0 0 0 2-1.7l.3-2a1.5 1.5 0 0 0-1-1.6l-3-1a1.5 1.5 0 0 0-1.7.5l-.8 1a12 12 0 0 1-4.7-4.7l1-.8a1.5 1.5 0 0 0 .5-1.7l-1-3A1.5 1.5 0 0 0 7.7 3.7l-2 .3A2 2 0 0 0 4 5Z"/></svg><div class="t"><a href="tel:+48662447818" style="color:var(--wood-soft);font-weight:600">662 447 818</a><small>Zamówienia i informacje</small></div></div>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><div class="t"><a href="https://www.instagram.com/akitaramentricity/" target="_blank" rel="noopener" style="color:var(--wood-soft);font-weight:600">@akitaramentricity</a><small>4,2 tys. obserwujących</small></div></div>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V4H8v2M3 11h18"/></svg><div class="t">Zamówienia online<small>Uber Eats &amp; Wolt</small></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><div class="t">ul. Bernarda Chrzanowskiego 11<small>80-278 Gdańsk</small></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 9 6 15 15 15a2 2 0 0 0 2-1.7l.3-2a1.5 1.5 0 0 0-1-1.6l-3-1a1.5 1.5 0 0 0-1.7.5l-.8 1a12 12 0 0 1-4.7-4.7l1-.8a1.5 1.5 0 0 0 .5-1.7l-1-3A1.5 1.5 0 0 0 7.7 3.7l-2 .3A2 2 0 0 0 4 5Z"/></svg><div class="t"><a href="tel:+48662447818">662 447 818</a><small>Zamówienia i informacje</small></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><div class="t"><a href="https://www.instagram.com/akitaramentricity/" target="_blank" rel="noopener">@akitaramentricity</a><small>4,2 tys. obserwujących</small></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V4H8v2M3 11h18"/></svg><div class="t">Zamówienia online<small>Uber Eats &amp; Wolt</small></div></div>
         </div>
-        <div class="card info-card">
+        <div class="info-block">
           <h4>Godziny otwarcia</h4>
           <div class="hours-row"><span>Poniedziałek</span><span>zamknięte</span></div>
           <div class="hours-row"><span>Wtorek</span><span>13:05 – 20:00</span></div>
@@ -698,14 +676,14 @@
     <div class="foot-grid">
       <div>
         <a href="#home" class="brand">
-          <span class="logo"><span>秋</span></span>
+          <svg class="logo-tri" viewBox="0 0 24 24" fill="url(#triGrad)"><path d="M12 2 L22 20 L2 20 Z"/></svg>
           <span><span class="bt">Akita Ramen</span><span class="bs">Trójmiasto</span></span>
         </a>
-        <p>Minimalistyczny ramen bar inspirowany Tokio, w sercu Gdańska. Głębokie buliony, ręczne tare, opcje wegańskie.</p>
+        <p>Ramen bar w sercu Gdańska. Głębokie buliony, ręczne tare, opcje wegańskie.</p>
         <div class="socials">
-          <a href="https://www.instagram.com/akitaramentricity/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="https://facebook.com/akitaramentricity" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1Z"/></svg></a>
-          <a href="tel:+48662447818" aria-label="Telefon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 9 6 15 15 15a2 2 0 0 0 2-1.7l.3-2a1.5 1.5 0 0 0-1-1.6l-3-1a1.5 1.5 0 0 0-1.7.5l-.8 1a12 12 0 0 1-4.7-4.7l1-.8a1.5 1.5 0 0 0 .5-1.7l-1-3A1.5 1.5 0 0 0 7.7 3.7l-2 .3A2 2 0 0 0 4 5Z"/></svg></a>
+          <a href="https://www.instagram.com/akitaramentricity/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://facebook.com/akitaramentricity" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1Z"/></svg></a>
+          <a href="tel:+48662447818" aria-label="Telefon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 9 6 15 15 15a2 2 0 0 0 2-1.7l.3-2a1.5 1.5 0 0 0-1-1.6l-3-1a1.5 1.5 0 0 0-1.7.5l-.8 1a12 12 0 0 1-4.7-4.7l1-.8a1.5 1.5 0 0 0 .5-1.7l-1-3A1.5 1.5 0 0 0 7.7 3.7l-2 .3A2 2 0 0 0 4 5Z"/></svg></a>
         </div>
       </div>
       <div>
@@ -736,9 +714,8 @@
   </div>
 </footer>
 
-<!-- mobile sticky CTA -->
 <div class="mobile-bar">
-  <a href="tel:+48662447818" class="btn btn-ghost">Zadzwoń</a>
+  <a href="tel:+48662447818" class="btn btn-text" style="justify-content:center"><u>Zadzwoń</u></a>
   <a href="#zamow" class="btn btn-primary">Zamów online</a>
 </div>
 
@@ -748,10 +725,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  // year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ---------- smooth scroll (Lenis, progressive enhancement) ----------
+  // ---------- smooth scroll (Lenis) ----------
   let lenis = null;
   if (!reduceMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({ duration: 1.05, smoothWheel: true });
@@ -759,12 +735,10 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(raf);
   }
 
-  // ---------- header scrolled state + scroll progress ----------
-  const header = document.getElementById('header');
+  // ---------- header + scroll progress ----------
   const progressBar = document.getElementById('scrollProgress');
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle('scrolled', y > 30);
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
   };
@@ -784,7 +758,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = [...document.querySelectorAll('section[id]')];
   const navLinks = document.getElementById('navLinks');
   const linkFor = id => navLinks.querySelector(`a[data-sec="${id}"]`);
-  const mlinkFor = id => navMobile.querySelector(`a[data-sec-m="${id}"]`);
   const spy = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -820,35 +793,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- 3D pointer tilt ----------
   if (canHover && !reduceMotion) {
     document.querySelectorAll('[data-tilt]').forEach(el => {
-      const max = parseFloat(el.dataset.tiltMax) || 10;
+      const max = parseFloat(el.dataset.tiltMax) || 8;
       el.style.transformStyle = 'preserve-3d';
       el.addEventListener('pointermove', (e) => {
         const r = el.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
         const py = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = `perspective(700px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg) translateZ(6px)`;
+        el.style.transform = `perspective(800px) rotateX(${(-py * max).toFixed(2)}deg) rotateY(${(px * max).toFixed(2)}deg)`;
       });
-      el.addEventListener('pointerleave', () => {
-        el.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateZ(0)';
-      });
-    });
-  }
-
-  // ---------- hero mouse parallax (blobs + bowl) ----------
-  const heroSection = document.getElementById('home');
-  const bowlVis = document.getElementById('bowlVis');
-  if (canHover && !reduceMotion && heroSection) {
-    heroSection.addEventListener('pointermove', (e) => {
-      const r = heroSection.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      document.querySelectorAll('[data-parallax]').forEach(el => {
-        const f = parseFloat(el.dataset.parallax);
-        el.style.transform = `translate(${px * f * 200}px, ${py * f * 200}px)`;
-      });
-      if (bowlVis) {
-        bowlVis.style.transform = `translateY(-50%) rotateX(${(-py * 10).toFixed(2)}deg) rotateY(${(px * 14).toFixed(2)}deg)`;
-      }
+      el.addEventListener('pointerleave', () => { el.style.transform = 'perspective(800px) rotateX(0) rotateY(0)'; });
     });
   }
 
@@ -879,18 +832,18 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBroth();
   }
 
-  // ---------- signature dishes: multi-column parallax ----------
+  // ---------- signature dishes: dramatic Skiper30-style multi-column parallax ----------
   const sigGallery = document.getElementById('sigGallery');
   const sigCols = sigGallery ? sigGallery.querySelectorAll('.sig-col') : [];
   function updateSigParallax() {
     if (!sigGallery || window.innerWidth <= 1040) return;
     const r = sigGallery.getBoundingClientRect();
     const vh = window.innerHeight;
+    // progress 0 -> 1 as section travels from "top hits bottom of viewport" to "bottom hits top"
     const progress = Math.min(Math.max((vh - r.top) / (vh + r.height), 0), 1);
     sigCols.forEach(col => {
-      const speed = parseFloat(col.dataset.speed) || 0.2;
-      const shift = (progress - 0.5) * r.height * speed * 2;
-      col.style.transform = `translateY(${shift}px)`;
+      const mult = parseFloat(col.dataset.speed) || 2;
+      col.style.transform = `translateY(${(progress * vh * mult).toFixed(1)}px)`;
     });
   }
   window.addEventListener('scroll', updateSigParallax, { passive: true });
@@ -916,6 +869,105 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   updateOpenBadge();
   setInterval(updateOpenBadge, 60000);
+
+  // ---------- hero particle constellation (canvas, pseudo-3D depth + mouse parallax) ----------
+  const canvas = document.getElementById('particleCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    const visual = canvas.parentElement;
+    const palette = ['#8052ff', '#ffb829', '#15846e', '#c65cff', '#5c8fff', '#a688ff'];
+    let particles = [];
+    let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let pointer = { x: 0, y: 0 };
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+
+    function makeParticles() {
+      particles = [];
+      const clusterCX = W * 0.62, clusterCY = H * 0.46;
+      const clusterRX = W * 0.34, clusterRY = H * 0.36;
+      const clusterCount = Math.round((W * H) / 9000);
+      for (let i = 0; i < clusterCount; i++) {
+        const ang = rand(0, Math.PI * 2);
+        const rad = Math.pow(Math.random(), 0.6);
+        particles.push({
+          x: clusterCX + Math.cos(ang) * clusterRX * rad,
+          y: clusterCY + Math.sin(ang) * clusterRY * rad,
+          z: rand(.3, 1),
+          size: rand(3, 8),
+          rot: rand(0, Math.PI * 2),
+          rotSpeed: rand(-.01, .01),
+          color: palette[Math.floor(Math.random() * palette.length)],
+          twinkle: rand(0, Math.PI * 2),
+          driftX: rand(-.06, .06),
+          driftY: rand(-.06, .06),
+        });
+      }
+      const ambientCount = Math.round((W * H) / 26000);
+      for (let i = 0; i < ambientCount; i++) {
+        particles.push({
+          x: rand(0, W), y: rand(0, H), z: rand(.15, .6),
+          size: rand(2, 5), rot: rand(0, Math.PI * 2), rotSpeed: rand(-.008, .008),
+          color: palette[Math.floor(Math.random() * palette.length)],
+          twinkle: rand(0, Math.PI * 2), driftX: rand(-.04, .04), driftY: rand(-.04, .04),
+        });
+      }
+    }
+
+    function resize() {
+      const rect = visual.getBoundingClientRect();
+      W = rect.width; H = rect.height;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      makeParticles();
+    }
+
+    function drawTriangle(x, y, size, rot, color, alpha) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.beginPath();
+      ctx.moveTo(0, -size);
+      ctx.lineTo(size * 0.87, size * 0.6);
+      ctx.lineTo(-size * 0.87, size * 0.6);
+      ctx.closePath();
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    let t = 0;
+    function tick() {
+      t += 1;
+      ctx.clearRect(0, 0, W, H);
+      const px = (pointer.x - 0.5) * 26;
+      const py = (pointer.y - 0.5) * 26;
+      for (const p of particles) {
+        p.x += p.driftX; p.y += p.driftY;
+        if (p.x < -20) p.x = W + 20; if (p.x > W + 20) p.x = -20;
+        if (p.y < -20) p.y = H + 20; if (p.y > H + 20) p.y = -20;
+        p.rot += p.rotSpeed;
+        const twinkle = 0.55 + Math.sin(t * 0.02 + p.twinkle) * 0.35;
+        const dx = px * p.z, dy = py * p.z;
+        drawTriangle(p.x + dx, p.y + dy, p.size * (0.6 + p.z * 0.6), p.rot, p.color, Math.max(0.12, twinkle * p.z));
+      }
+      if (!reduceMotion) requestAnimationFrame(tick);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    if (canHover) {
+      visual.addEventListener('pointermove', (e) => {
+        const r = visual.getBoundingClientRect();
+        pointer.x = (e.clientX - r.left) / r.width;
+        pointer.y = (e.clientY - r.top) / r.height;
+      });
+    }
+    tick();
+    if (reduceMotion) { /* single static frame already drawn */ }
+  }
 });
 </script>
 </body>
